@@ -86,7 +86,7 @@ def main():
     grid = voronoiNaiveParallel(rows, columns, points, euclidean_distances)
     plt.matshow(grid)
     plt.scatter(points[:,0], points[:,1], c="black", s=4)
-    plt.savefig("voronoi.png")
+    plt.savefig("voronoiDiagram.png")
 
   def plotNComplexity():
     times = []
@@ -112,6 +112,6 @@ def main():
   points = (np.random.rand(10, 2) * [rows, columns]).astype(int)
   # print(timeit.timeit(lambda: voronoiJumpFloodAlgorithm(rows, columns, points, euclid), number=1))
   # print(timeit.timeit(lambda: voronoiJumpFloodAlgorithmParallel(rows, columns, points, euclid), number=1))
-  # visualizeVoronoi(rows, columns, 10)
+  visualizeVoronoi(rows, columns, 20)
 
 main()
